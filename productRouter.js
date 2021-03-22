@@ -14,8 +14,6 @@ const router = express.Router();
 	});
 })();
 
-// const productos = new Productos(muestra);
-
 const getExtension = (fileType) => fileType.split('/')[1];
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => cb(null, path.join(__dirname, './public/uploads')),
