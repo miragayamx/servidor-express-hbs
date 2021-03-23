@@ -43,7 +43,7 @@ router.get('/productos/listar/:id', productExists, (req, res) => {
 router.post('/productos/guardar/', upload.single('thumbnail'), (req, res) => {
 	const dataKeys = [ 'title', 'price' ];
 	const shapeMatches = dataKeys.every((el) => Object.keys(req.body).includes(el));
-	if (!shapeMatches && !req.file)
+	if (!shapeMatches || !req.file)
 		return res.status(400).json({ error: 'los datos proporcionados son insuficientes' });
 	const newProducto = productos.addProduct({
 		title: req.body.title,
