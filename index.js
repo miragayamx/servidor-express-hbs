@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-var handlebars = require('express-handlebars');
+const handlebars = require('express-handlebars');
 const productRouter = require('./productRouter');
 const vistaRouter = require('./vistaRouter');
 
